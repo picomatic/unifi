@@ -24,7 +24,7 @@ curl_cmd="curl -v --silent --cookie ${cookie} --cookie-jar ${cookie} --insecure"
 ${curl_cmd} --data "{\"username\":\"$username\", \"password\":\"$password\"}" $baseurl/api/login  
 
 for device in ${DeviceID}; 
-  do ${curl_cmd} -X PUT -H "Content-Type: application/json" --data "json={\"disabled\":false}" $baseurl/api/s/$site/rest/device/${device}
+  do ${curl_cmd} -X PUT -H "Content-Type: application/json" --data "json={\"disabled\":true}" $baseurl/api/s/$site/rest/device/${device}
 done  
 
 ${curl_cmd} $baseurl/logout
